@@ -1,0 +1,52 @@
+.list{
+    border-bottom: 1px solid;
+    padding:10px;
+    width:1000px;
+    margin:2% auto;
+    align-items:center;
+    height:90px
+
+}
+.red{
+    color:red
+}
+.green{
+    color:rgb(85, 253, 85)
+}
+.del>img{
+    width:30px;
+    height:30px;
+    margin:10px
+}
+.del{
+    min-width:230px;
+    padding-right: 24px;
+    align-items:center;
+}
+
+.Sys{
+    text-transform:uppercase;
+    width:90px
+}
+
+.name{
+    font-size:16px;
+    width:100px;
+   
+}
+.list>div{
+    margin-right: 100px;
+}
+
+.per{
+    width:150px
+}
+.data{
+    width:100%;
+}
+.price{
+    width:150px
+}
+.mt{
+    width:90px
+}
