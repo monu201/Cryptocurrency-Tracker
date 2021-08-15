@@ -12,7 +12,12 @@ function App() {
    }).catch(e=>{setcoins([{name:"error"}])})
   },[])
 
- 
+  const con={
+    hidden:{x:"100vw"},
+    visible:{
+      x:0,
+      transition:{delay:0.6,type:"spring",ease:"easeIn"}}
+  }
 
   const c={
     hidden:{opacity:0},
@@ -25,7 +30,10 @@ function App() {
  
   return (
 
-    <div 
+    <motion.div 
+    variants={con}
+    initial="hidden"
+    animate="visible"
     className="App">
 
        <h1>Cryptocurrency Tracker</h1>
@@ -51,7 +59,7 @@ function App() {
          ></Del>)} )}
          </motion.div>:<div className="false d-flex justify-content-center"><i className="ri-emotion-sad-line sad"></i>No Result Found</div>}</div>
     
-    </div>
+    </motion.div>
   );
 }
 
