@@ -13,15 +13,20 @@ function App() {
   },[])
 
   const con={
-    hidden:{x:"100vw"},
+    hidden:{opacity:0},
     visible:{
-      x:0,
-      transition:{delay:0.6,type:"spring",ease:"easeIn"}}
+      opacity:1,
+      transition:{
+        duartion:3,
+        type:"spring",
+        ease:"easeIn",
+        when:"beforeChildren",
+        staggerChildren:2}}
   }
 
   const c={
-    hidden:{opacity:0},
-    visible:{opacity:1,transition:{duration:1,type:"spring"}}
+    h:{opacity:0},
+    v:{opacity:1,transition:{duration:1,type:"spring",ease:"easeIn"}}
   }
 
 
@@ -38,14 +43,21 @@ function App() {
 
        <h1>Cryptocurrency Tracker</h1>
       <form className="d-flex justify-content-center">
-      <i className="ri-search-2-line"></i><input type="text" name="currency" value={search} onChange={(e)=>{sets(e.target.value)}} className="search"  placeholder="Search"></input>
+      <i className="ri-search-2-line"></i><motion.input 
+      whileFocus={{scale:1.05}}
+      transition={{ease:"easeIn",duration:0.3}}
+     
+      type="text" name="currency" value={search} onChange={(e)=>{e.preventDefault();  sets(e.target.value)}} className="search"  placeholder="Search">
+
+      </motion.input>
       </form>
       <h4> <a href="https://www.linkedin.com/in/pr-monish-prasad-952a17206/">By Monish Prasad</a></h4>
     
+ 
     <div>{fil.length>0 ? <motion.div
      variants={c}
-     initial="hidden"
-     animate="visible"
+     initial="h"
+     animate="v"
      >
        
       {fil.map((d)=>{return (<Del
